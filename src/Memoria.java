@@ -21,11 +21,25 @@ public class Memoria {
     }
 
     public void mostrar() {
-        System.out.println("Estado da Memória:");
+        System.out.println("=== Estado da Memoria ===");
+        int usados = 0;
+
         for (int i = 0; i < blocos.length; i++) {
-            System.out.print(blocos[i] == null ? "" : blocos[i]);
-            if ((i + 1) % 16 == 0) System.out.println();
+            String valor = (blocos[i] == null) ? "  " : blocos[i];
+            if (blocos[i] != null) usados++;
+
+            System.out.printf("[%s]", valor);
+
+            // Quebra de linha a cada 16 blocos (formato 4x16)
+            if ((i + 1) % 16 == 0) {
+                System.out.println();
+            }
         }
-        System.out.println();
-    }
-}
+
+        int livres = blocos.length - usados;
+        double percentual = (usados * 100.0) / blocos.length;
+
+        System.out.println("=========================");
+        System.out.printf("Blocos usados: %d | Blocos livres: %d | Ocupacao: %.2f%%\n\n",
+                usados, livres, percentual);
+    }}
