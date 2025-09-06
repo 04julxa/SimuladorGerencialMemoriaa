@@ -50,7 +50,7 @@ public class Main {
                 }
             }
 
-            memoria.mostrar();
+            memoria.exibir();
 
             try { Thread.sleep(1500); } catch (InterruptedException e) {}
         }
