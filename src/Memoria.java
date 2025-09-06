@@ -30,7 +30,6 @@ public class Memoria {
 
             System.out.printf("[%s]", valor);
 
-            // Quebra de linha a cada 16 blocos (formato 4x16)
             if ((i + 1) % 16 == 0) {
                 System.out.println();
             }
@@ -39,7 +38,7 @@ public class Memoria {
         int livres = blocos.length - usados;
         double percentual = (usados * 100.0) / blocos.length;
 
-        System.out.println("=========================");
         System.out.printf("Blocos usados: %d | Blocos livres: %d | Ocupacao: %.2f%%\n\n",
                 usados, livres, percentual);
-    }}
+    }
+}
