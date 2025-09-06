@@ -20,7 +20,7 @@ public class Memoria {
         }
     }
 
-    public void mostrar() {
+    public void exibir() {
         System.out.println("=== Estado da Memoria ===");
         int usados = 0;
 
